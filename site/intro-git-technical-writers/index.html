@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS - MkLorum</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS";
+        var mkdocs_page_input_path = "intro-git-technical-writers.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MkLorum
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MkLorum</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="an-introduction-to-git-for-technical-writers">AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS</h1>
+<h2 id="what-is-git">WHAT IS GIT?</h2>
+<p>Git is a free open source tool that allows you to track and manage changes to files and directories. </p>
+<h2 id="why-technical-writers-should-use-git">WHY TECHNICAL WRITERS SHOULD USE GIT</h2>
+<p>Even though Git is a tool traditionally used by software developers, technical writers gain many benefits from using a version control system such as Git. These benefits include: </p>
+<ul>
+<li>Having snapshots of your work all saved in one place. </li>
+<li>Being able to easily restore project backups and roll back unwanted changes.</li>
+<li>Being able to collaborate with other writers and review each other’s changes.</li>
+<li>Being able to easily manage different versions of the same document. </li>
+<li>Having an automated and efficient documentation publishing process. </li>
+</ul>
+<h2 id="important-git-concepts">IMPORTANT GIT CONCEPTS</h2>
+<p>Below are key concepts new users must understand to start using Git: </p>
+<h3 id="repositories">Repositories</h3>
+<p>All the files for a project are stored in what’s called a Git repository. A repository is a database of files that allows you to track the changes made to the files.</p>
+<p>Repositories are hosted on a remote server. Multiple users can clone a remote repository and have a local version on their computer. Any project changes users make locally can then be pushed and merged into the remote version of the repository. </p>
+<p>Storing project files in a repository allows users to review their project history and see:
+- Who has made which changes.
+- When changes were made.
+- Why changes were made (via a Git commit message).</p>
+<h3 id="snapshots">Snapshots</h3>
+<p>Each time you change a file Git takes a snapshot of your whole project and saves it. This allows you to easily backup files and ensures you never delete anything by accident. </p>
+<p>If you make a mistake, you can easily revert your project back to an earlier state. </p>
+<h3 id="pushing-and-pulling-changes">Pushing and Pulling Changes</h3>
+<p>Each team member will have a snapshot of the remote project repository on their machine. As users work, they will push their changes to the remote repository and pull changes other users have made down from the remote repository. 
+The git push and git pull commands will allow 
+you to push and pull your changes respectively. </p>
+<h3 id="branching">Branching</h3>
+<p>A branch is a separate version of all the files from the main repository. Branching allows team members to work on different versions of a project without affecting the main branch. Software development teams often have separate branches to build various features for a product. </p>
+<h2 id="common-git-commands">Common Git Commands</h2>
+<ul>
+<li>
+<p>git add: Stages the changes you made on your local repository to be included in the next snapshot that will be pushed to the remote repository. </p>
+</li>
+<li>
+<p>git commit: Saves the current snapshot of your repository to the project history. </p>
+</li>
+<li>
+<p>git push: Updates the remote repository with the commits made to your local repository. </p>
+</li>
+<li>
+<p>git pull: Adds changes from the remote repository into your local repository.</p>
+</li>
+<li>
+<p>git status: Displays a summary of the files that contain changes and are staged for the next commit. </p>
+</li>
+<li>
+<p>git merge: Merges together changes from separate branches.</p>
+</li>
+<li>
+<p>git log: Shows the commit history of the repository.</p>
+</li>
+<li>
+<p>git stash: Allows you to save the current state of your repository which contains your uncommitted changes and return to a clean version before you made those changes. </p>
+</li>
+<li>
+<p>git revert: Creates a new commit which reverses the changes you made in your previous commit. Note: Your current working environment must be clean with no uncommitted changes before running this command. You may have to run git stash before running git revert.</p>
+</li>
+<li>
+<p>git checkout/git switch: Switches your repository to a different branch and updates your local repository with the snapshot of files stored on that branch. </p>
+</li>
+</ul>
+<p>-git branch: Creates a separate version (branch) of a repository. </p>
+<ul>
+<li>git tag: Lets you tag specific points in a repository’s history as being important.</li>
+</ul>
+<h1 id="resources">RESOURCES</h1>
+<h2 id="for-more-information-on-using-git-see-the-following-resources">FOR MORE INFORMATION ON USING GIT SEE THE FOLLOWING RESOURCES:</h2>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Git Documentation</a></p>
+<p><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">Git Documentation on Git Branching</a></p>
+<p><a href="https://learngitbranching.js.org/">Interactive Tutorial on Git Branching</a></p>
+<p><a href="https://gitimmersion.com/">Interactive Git Tutorial</a></p>
+<p><a href="https://git-scm.com/downloads/guis">Git Gui Clients</a></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
