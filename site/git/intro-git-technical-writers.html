@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS - MkLorum</title>
+    <title>Intro to Git for Technical Writers - My User Guides</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS";
-        var mkdocs_page_input_path = "intro-git-technical-writers.md";
+        var mkdocs_page_name = "Intro to Git for Technical Writers";
+        var mkdocs_page_input_path = "git\\intro-git-technical-writers.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -30,22 +30,57 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> MkLorum
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Intro to Git for Technical Writers</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-git">What is Git?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-technical-writers-should-use-git">Why Technical Writers Should Use Git</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#important-git-concepts">Important Git Concepts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#repositories">Repositories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#snapshots">Snapshots</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pushing-and-pulling-changes">Pushing and Pulling Changes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#branching">Branching</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-git-commands">Common Git Commands</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MadCap Flare</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../spacing-paragraphs-madcap-flare.html">Add Paragraph Spacing Inside of Note Divs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -54,14 +89,15 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">MkLorum</a>
+          <a href="../index.html">My User Guides</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS</li>
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Git</li>
+      <li class="breadcrumb-item active">Intro to Git for Technical Writers</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -70,10 +106,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="an-introduction-to-git-for-technical-writers">AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS</h1>
-<h2 id="what-is-git">WHAT IS GIT?</h2>
+                <h1 id="an-introduction-to-git-for-technical-writers">An Introduction to Git for Technical Writers</h1>
+<h2 id="what-is-git">What is Git?</h2>
 <p>Git is a free open source tool that allows you to track and manage changes to files and directories. </p>
-<h2 id="why-technical-writers-should-use-git">WHY TECHNICAL WRITERS SHOULD USE GIT</h2>
+<h2 id="why-technical-writers-should-use-git">Why Technical Writers Should Use Git</h2>
 <p>Even though Git is a tool traditionally used by software developers, technical writers gain many benefits from using a version control system such as Git. These benefits include: </p>
 <ul>
 <li>Having snapshots of your work all saved in one place. </li>
@@ -82,7 +118,7 @@
 <li>Being able to easily manage different versions of the same document. </li>
 <li>Having an automated and efficient documentation publishing process. </li>
 </ul>
-<h2 id="important-git-concepts">IMPORTANT GIT CONCEPTS</h2>
+<h2 id="important-git-concepts">Important Git Concepts</h2>
 <p>Below are key concepts new users must understand to start using Git: </p>
 <h3 id="repositories">Repositories</h3>
 <p>All the files for a project are stored in what’s called a Git repository. A repository is a database of files that allows you to track the changes made to the files.</p>
@@ -103,42 +139,43 @@ you to push and pull your changes respectively. </p>
 <h2 id="common-git-commands">Common Git Commands</h2>
 <ul>
 <li>
-<p>git add: Stages the changes you made on your local repository to be included in the next snapshot that will be pushed to the remote repository. </p>
+<p><strong>git add:</strong> Stages the changes you made on your local repository to be included in the next snapshot that will be pushed to the remote repository. </p>
 </li>
 <li>
-<p>git commit: Saves the current snapshot of your repository to the project history. </p>
+<p><strong>git commit:</strong> Saves the current snapshot of your repository to the project history. </p>
 </li>
 <li>
-<p>git push: Updates the remote repository with the commits made to your local repository. </p>
+<p><strong>git push:</strong> Updates the remote repository with the commits made to your local repository. </p>
 </li>
 <li>
-<p>git pull: Adds changes from the remote repository into your local repository.</p>
+<p><strong>git pull:</strong> Adds changes from the remote repository into your local repository.</p>
 </li>
 <li>
-<p>git status: Displays a summary of the files that contain changes and are staged for the next commit. </p>
+<p><strong>git status:</strong> Displays a summary of the files that contain changes and are staged for the next commit. </p>
 </li>
 <li>
-<p>git merge: Merges together changes from separate branches.</p>
+<p><strong>git merge:</strong> Merges together changes from separate branches.</p>
 </li>
 <li>
-<p>git log: Shows the commit history of the repository.</p>
+<p><strong>git log:</strong> Shows the commit history of the repository.</p>
 </li>
 <li>
-<p>git stash: Allows you to save the current state of your repository which contains your uncommitted changes and return to a clean version before you made those changes. </p>
+<p><strong>git stash:</strong> Allows you to save the current state of your repository which contains your uncommitted changes and return to a clean version before you made those changes. </p>
 </li>
 <li>
-<p>git revert: Creates a new commit which reverses the changes you made in your previous commit. Note: Your current working environment must be clean with no uncommitted changes before running this command. You may have to run git stash before running git revert.</p>
+<p><strong>git revert:</strong> Creates a new commit which reverses the changes you made in your previous commit. Note: Your current working environment must be clean with no uncommitted changes before running this command. You may have to run git stash before running git revert.</p>
 </li>
 <li>
-<p>git checkout/git switch: Switches your repository to a different branch and updates your local repository with the snapshot of files stored on that branch. </p>
+<p><strong>git checkout/git switch:</strong> Switches your repository to a different branch and updates your local repository with the snapshot of files stored on that branch. </p>
+</li>
+<li>
+<p><strong>git branch:</strong> Creates a separate version (branch) of a repository. </p>
+</li>
+<li>
+<p><strong>git tag:</strong> Lets you tag specific points in a repository’s history as being important.</p>
 </li>
 </ul>
-<p>-git branch: Creates a separate version (branch) of a repository. </p>
-<ul>
-<li>git tag: Lets you tag specific points in a repository’s history as being important.</li>
-</ul>
-<h1 id="resources">RESOURCES</h1>
-<h2 id="for-more-information-on-using-git-see-the-following-resources">FOR MORE INFORMATION ON USING GIT SEE THE FOLLOWING RESOURCES:</h2>
+<h1 id="resources">Resources</h1>
 <p><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Git Documentation</a></p>
 <p><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">Git Documentation on Git Branching</a></p>
 <p><a href="https://learngitbranching.js.org/">Interactive Tutorial on Git Branching</a></p>
@@ -147,6 +184,10 @@ you to push and pull your changes respectively. </p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="merge-branches-tortoise-git.html" class="btn btn-neutral float-right" title="Merge Branches with Tortoise Git">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -168,6 +209,10 @@ you to push and pull your changes respectively. </p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="merge-branches-tortoise-git.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -175,7 +220,6 @@ you to push and pull your changes respectively. </p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

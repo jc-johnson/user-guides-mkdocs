@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Generate and Use SSH Keys with TortoiseGit - My User Guides</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Generate and Use SSH Keys with TortoiseGit";
+        var mkdocs_page_input_path = "git\\create-ssh-keys-tortoise-git.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Generate and Use SSH Keys with TortoiseGit</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#process-overview">Process Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#install-the-following-required-software">Install the Following Required Software</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#create-ssh-keys-using-the-tortoisegit-putty-key-generator">Create SSH Keys Using the TortoiseGit Putty Key Generator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-public-ssh-keys-to-gitlab">Adding Public SSH Keys to Gitlab</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-your-ssh-key-connection">Test Your SSH Key Connection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-default-ssh-key-in-putty">Set Default SSH Key in PuTTY</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MadCap Flare</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../spacing-paragraphs-madcap-flare.html">Add Paragraph Spacing Inside of Note Divs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My User Guides</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Git</li>
+      <li class="breadcrumb-item active">Generate and Use SSH Keys with TortoiseGit</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-generate-ssh-keys-with-tortoisegit-windows">How to Generate SSH Keys with TortoiseGit (Windows)</h1>
+<p>2024</p>
+<h2 id="introduction">Introduction</h2>
+<p>Using an SSH key pair is a secure way of authenticating and accessing source code stored on remote servers.  TortoiseGit is an easy-to-use GUI for Git. This guide will describe how to generate an SSH pair so you can use TortoiseGit to connect with your version control system via SSH. This guide uses the Gitlab version control system but the steps are similar for most other popular tools such as GitHub. </p>
+<h2 id="process-overview">Process Overview</h2>
+<ol>
+<li>Install the required software. </li>
+<li>Generate SSH keys via OpenSSH and the ssh-keygen command. </li>
+<li>Generate SSH keys via TortiseGit’s instance of PuTTY Key Generator. </li>
+<li>Register public SSH keys to GitLab. </li>
+</ol>
+<h2 id="install-the-following-required-software">Install the Following Required Software</h2>
+<ul>
+<li><a href="https://git-scm.com/download/win">Git</a></li>
+<li><a href="https://tortoisegit.org/download/">TortoiseGit</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui">OpenSSH (Version 6.5 or later)</a></li>
+<li><a href="https://www.putty.org/">PuTTy</a></li>
+</ul>
+<p><strong>Note:</strong> OpenSSH is automatically installed on versions of Windows 10 or later.</p>
+<h2 id="create-ssh-keys-using-the-tortoisegit-putty-key-generator">Create SSH Keys Using the TortoiseGit Putty Key Generator</h2>
+<p><strong>Important:</strong> To use TortoiseGit with your Version Control provider (such as GitHub or Gitlab) using SSH, you must generate a key pair with the version of the PuTTY Key Generator that is bundled with TortoiseGit. Other versions of PuTTy may not be compatible with the version that comes with TortoiseGit. The default location for the PuTTY Key Generator instance that is installed with TortoiseGit is C:\Program Files\TortoiseGit\bin. After generating a key pair you must register the public key with your Version Control provider.</p>
+<ol>
+<li>Navigate to <strong>C:\Program Files\TortoiseGit\bin</strong> and double-click <strong>puttygen.exe</strong> to open the PuTTY Key Generator.</li>
+<li>At the bottom of the window select the type of key to generate. </li>
+<li>Click Generate and start moving your mouse over the blank area to generate a key pair. </li>
+<li>Enter a key comment. </li>
+<li>Enter a passphrase and confirm it. <ul>
+<li>You have the option to leave the passphrase blank. </li>
+</ul>
+</li>
+<li>Copy all of the text from the box containing the public key. </li>
+<li>Open a text editor and paste all of the text into a text file. </li>
+<li>In PuTTY Key Generator click <strong>Save Private Key</strong>. <ul>
+<li>Ensure that you save the private key first to avoid any file extension confusion or overwrites. </li>
+</ul>
+</li>
+<li>Click <strong>Save Public Key</strong>. </li>
+<li>Choose the location to save your public key. The default location is <strong>C:\User[YOUR USER].ssh</strong>.</li>
+</ol>
+<p><strong>Important:</strong> Always keep your private key secure.</p>
+<h2 id="adding-public-ssh-keys-to-gitlab">Adding Public SSH Keys to Gitlab</h2>
+<ol>
+<li>In File Explorer, navigate to the folder where you stored your SSH keys after generating them. The default location is <strong>C:\User[YOUR USER].ssh</strong>.<ul>
+<li><strong>.ssh</strong> is a hidden folder. To view hidden folders in Windows 11, in File Explorer, navigate to <strong>View &gt; Show</strong> and select <strong>Hidden Items</strong>. In previous Windows versions, navigate to Folder Options and select <strong>Show Hidden Files, Folders, and Drives</strong>.</li>
+</ul>
+</li>
+<li>Open the <strong>.pub</strong> file associated with the keys you generated in Notepad and copy all the text from the file (ctrl + A, ctrl + C).</li>
+<li>In File Explorer, navigate to <strong>View &gt; Show</strong> and select the file extensions checkbox to display file extensions. </li>
+<li>In Gitlab, navigate to <strong>User Settings &gt; SSH Keys</strong>.</li>
+<li>Click <strong>Add New Key</strong>.</li>
+<li>In the key field, paste in all the text from the <strong>.pub</strong> file.</li>
+<li>Enter a title for the key.</li>
+<li>Set the usage type to <strong>Authentication &amp; Signing</strong>.</li>
+<li>Set the expiration date (optional).</li>
+<li>Click <strong>Add Key</strong>.</li>
+</ol>
+<h2 id="test-your-ssh-key-connection">Test Your SSH Key Connection</h2>
+<ol>
+<li>Register your SSH key with your Version Control provider. </li>
+<li>Open a terminal and run <strong>ssh -T git@gitlab.[YOUR GITLAB URL].com</strong>. <ul>
+<li>If this your first time connecting to the GitLab host, verify the authenticity of the host.</li>
+</ul>
+</li>
+<li>Run <strong>ssh -T git@gitlab.[YOUR GITLAB URL].com</strong> again and you should get a Welcome to GitLab, @username! message.
+If the welcome message doesn’t appear, you can troubleshoot by running SSH in verbose mode using ssh -Tvvv git@gitlab.[YOUR GITLAB URL].com. </li>
+</ol>
+<h2 id="set-default-ssh-key-in-putty">Set Default SSH Key in PuTTY</h2>
+<ol>
+<li>In PuTTY navigate to <strong>Connection &gt; SSH &gt; Auth &gt; Credentials</strong>.<ul>
+<li>The default location of the TortiseGit instance of PuTTY is <strong>C:\Program Files\TortoiseGit\bin</strong>.</li>
+</ul>
+</li>
+<li>Select the private key file that you generated using the TortoiseGit PuTTY Key Generator.</li>
+<li>Navigate to Session, select default settings, and click <strong>Save</strong>.
+Now PuTTY will use the correct private key for all new connections.  </li>
+</ol>
+<p><strong>Important:</strong> When cloning a repository using TortoiseGit ensure the load putty key option is selected and is referencing the correct key file.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.ssh.com/academy/ssh/keygen">SSH.com</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/ssh.html">Gitlab SSH Documentation</a></li>
+<li><a href="https://tortoisegit.org/docs/tortoisegit/tgit-ssh-faq.html#tgit-ssh-faq-defaultkey">TortiseGit SSH Documentation</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="merge-branches-tortoise-git.html" class="btn btn-neutral float-left" title="Merge Branches with Tortoise Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="merge-conflicts-tortoise-git.html" class="btn btn-neutral float-right" title="Resolve Merge Conflicts with TortoiseGit">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="merge-branches-tortoise-git.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="merge-conflicts-tortoise-git.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

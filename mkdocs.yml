@@ -1,14 +1,18 @@
-site_name: MkLorum
+site_name: My User Guides
 nav:
   - Home: index.md
   - About: about.md
   - User Guides: guides.md
 nav:
   - Home: index.md
-  - User Guide:
-    - Intro to Git for Technical Writers: intro-git-technical-writers.md
-    - Merge Branches with Tortoise Git: merge-branches-tortoise-git.md
-    - Generate and Use SSH Keys with TortoiseGit: create-ssh-keys-tortoise-git.md
+  - Git:
+    - Intro to Git for Technical Writers: git/intro-git-technical-writers.md
+    - Merge Branches with Tortoise Git: git/merge-branches-tortoise-git.md
+    - Generate and Use SSH Keys with TortoiseGit: git/create-ssh-keys-tortoise-git.md
+    - Resolve Merge Conflicts with TortoiseGit: git/merge-conflicts-tortoise-git.md
+  - MadCap Flare:
+    - Add Paragraph Spacing Inside of Note Divs: flare/spacing-paragraphs-madcap-flare.md
+    - Automatically Run Jenkins Jobs After a Git Push: flare/auto-build-deploy-madcap-targets.md
   - About:
     - License: license.md
     - Release Notes: release-notes.md

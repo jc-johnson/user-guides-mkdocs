@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>My User Guides</title>
+    <title>Add Paragraph Spacing Inside of Note Divs - My User Guides</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Home";
-        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_name = "Add Paragraph Spacing Inside of Note Divs";
+        var mkdocs_page_input_path = "spacing-paragraphs-madcap-flare.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -35,14 +35,8 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Git</span></p>
@@ -57,8 +51,20 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">MadCap Flare</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="spacing-paragraphs-madcap-flare.html">Add Paragraph Spacing Inside of Note Divs</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Add Paragraph Spacing Inside of Note Divs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#context">Context</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#process">Process</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-note-div-style">Creating a Note DIV Style</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#code-sample">Code sample</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#result">Result</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">About</span></p>
@@ -82,7 +88,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Home</li>
+          <li class="breadcrumb-item">MadCap Flare</li>
+      <li class="breadcrumb-item active">Add Paragraph Spacing Inside of Note Divs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -91,27 +98,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    git/intro-git-technical-writers.md
-    ...      # Other markdown pages, images and other files.
-</code></pre>
+                <h1 id="how-to-add-paragraph-spacing-inside-of-notes-in-madcap-flare">How to Add Paragraph Spacing Inside of Notes in Madcap Flare</h1>
+<h2 id="context">Context</h2>
+<p>Notes are a great way of highlighting important information in MadCap Flare. Some notes require long blocks of text that are better broken up yet still contained within the same note block. </p>
+<h2 id="process">Process</h2>
+<p>To create spacing within a note in MadCap Flare follow the following steps:
+1. Create a custom div style for notes.
+2. Create separate divs nested inside of the note div to separate content. </p>
+<p>The best way to create spacing between paragraphs within the same note in MadCap flare is to create separate divs of content nested inside the parent note div. You can do this easily using the XML editor in MadCap Flare.</p>
+<p>Between each separate block of text also add a div that simply adds a space between paragraphs of text. </p>
+<h2 id="creating-a-note-div-style">Creating a Note DIV Style</h2>
+<p>To create styling for content that should be inside of a note, you have to create a custom class in your stylesheet in your MadCap Flare project. Complete the following steps: </p>
+<ol>
+<li>In MadCap Flare in the Content Explorer, navigate to <strong>Resources &gt; Stylesheets &gt; [Your Project Stylesheet].css</strong></li>
+<li>Right click the CSS file and select Open with &gt; Internal Text Editor  </li>
+<li>Add a definition for the CSS properties for div.note content similar to the example below.</li>
+<li>Save the changes you made to the stylesheet. </li>
+</ol>
+<p>In a project topic, select the content you want to put inside of a note and select the newly created div.note style from the style dropdown in the Styles window on the Home tab. </p>
+<p>Separating Content Within a Note</p>
+<ol>
+<li>Right-click on your topic in the MadCap Flare File Explorer.</li>
+<li>Edit your topic using the Text Editor. </li>
+<li>Insert a code snippet similar to the code sample below. </li>
+</ol>
+<p><strong>Note:</strong> Use the following line to create spacing between paragraphs within the note div: <strong><div>&#160;</div></strong></p>
+<h2 id="code-sample">Code sample</h2>
+<h2 id="result">Result</h2>
+<p>The note from the above code will appear as follows:</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="git/intro-git-technical-writers.html" class="btn btn-neutral float-right" title="Intro to Git for Technical Writers">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="git/merge-conflicts-tortoise-git.html" class="btn btn-neutral float-left" title="Resolve Merge Conflicts with TortoiseGit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -134,8 +154,10 @@ docs/
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="git/merge-conflicts-tortoise-git.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-      <span><a href="git/intro-git-technical-writers.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+      <span><a href="license.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -151,8 +173,3 @@ docs/
 
 </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2025-09-20 19:51:17.434870+00:00
--->

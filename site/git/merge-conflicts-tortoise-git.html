@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Resolve Merge Conflicts with TortoiseGit - My User Guides</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Resolve Merge Conflicts with TortoiseGit";
+        var mkdocs_page_input_path = "git\\merge-conflicts-tortoise-git.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Resolve Merge Conflicts with TortoiseGit</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resolving-a-merge-conflict">Resolving a Merge Conflict</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#selecting-the-version-you-want-to-keep">Selecting the Version You Want to Keep</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MadCap Flare</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../spacing-paragraphs-madcap-flare.html">Add Paragraph Spacing Inside of Note Divs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My User Guides</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Git</li>
+      <li class="breadcrumb-item active">Resolve Merge Conflicts with TortoiseGit</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-resolve-merge-conflicts-in-tortoisegit">How to Resolve Merge Conflicts in TortoiseGit</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Resolving merge conflicts is an inevitable part of using Git and can be tricky for new users. TortoiseGit offers a helpful interface for resolving conflicts. </p>
+<h2 id="resolving-a-merge-conflict">Resolving a Merge Conflict</h2>
+<p>Merge conflicts occur when you merge two branches that have different versions of the same file. If you have conflicting changes when you merge branches in TortoiseGit you will see the following two screens:</p>
+<p>To begin resolving the merge conflict click <strong>Resolve</strong>.</p>
+<p><strong>Note:</strong> You can also click the dropdown arrow and select stash to stash the changes in your current working directory.</p>
+<p>The following window displays all the files that have an existing conflict.</p>
+<p>Double-click a file in the list to bring up the following screen which allows you to resolve the merge conflicts. </p>
+<p>The above window shows three versions of the conflicted file:
+1. <strong>HEAD</strong> is the file as it appears in your current branch.
+2. <strong>MERGE_HEAD</strong> is version of the file from the other branch. 
+3. <strong>Merged</strong> is a version of the file that contains changes from both branches. </p>
+<p>You can scroll through each of the differences and conflicts using the arrows under Navigate. </p>
+<h2 id="selecting-the-version-you-want-to-keep">Selecting the Version You Want to Keep</h2>
+<p>You have several options for selecting the text block or file you want to keep. The two most common ways are: 
+Right-click on a version of the file. In the context menu, select which text block, whole file, or order of text blocks to use.</p>
+<p>Select one of the options under Blocks to choose which text block to use. </p>
+<p>Once you have selected the file or text block you want to use, click Mark as Resolved then click Save. Close the merge window. </p>
+<p>Once you have resolved all files that contained merge conflicts, the file list in this window will be empty:
+Close this window. </p>
+<p>Commit and push the changes from resolving the merge conflicts to add them to your repository.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="create-ssh-keys-tortoise-git.html" class="btn btn-neutral float-left" title="Generate and Use SSH Keys with TortoiseGit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../spacing-paragraphs-madcap-flare.html" class="btn btn-neutral float-right" title="Add Paragraph Spacing Inside of Note Divs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="create-ssh-keys-tortoise-git.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../spacing-paragraphs-madcap-flare.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

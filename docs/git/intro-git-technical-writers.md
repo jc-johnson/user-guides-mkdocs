@@ -1,10 +1,10 @@
-# AN INTRODUCTION TO GIT FOR TECHNICAL WRITERS
+# An Introduction to Git for Technical Writers
 
-## WHAT IS GIT?
+## What is Git?
 
 Git is a free open source tool that allows you to track and manage changes to files and directories. 
 
-## WHY TECHNICAL WRITERS SHOULD USE GIT
+## Why Technical Writers Should Use Git
 
 Even though Git is a tool traditionally used by software developers, technical writers gain many benefits from using a version control system such as Git. These benefits include: 
 
@@ -14,7 +14,7 @@ Even though Git is a tool traditionally used by software developers, technical w
 - Being able to easily manage different versions of the same document. 
 - Having an automated and efficient documentation publishing process. 
 
-## IMPORTANT GIT CONCEPTS
+## Important Git Concepts
 
 Below are key concepts new users must understand to start using Git: 
 
@@ -47,33 +47,31 @@ A branch is a separate version of all the files from the main repository. Branch
 
 ## Common Git Commands
 
-- git add: Stages the changes you made on your local repository to be included in the next snapshot that will be pushed to the remote repository. 
+- **git add:** Stages the changes you made on your local repository to be included in the next snapshot that will be pushed to the remote repository. 
 
-- git commit: Saves the current snapshot of your repository to the project history. 
+- **git commit:** Saves the current snapshot of your repository to the project history. 
 
-- git push: Updates the remote repository with the commits made to your local repository. 
+- **git push:** Updates the remote repository with the commits made to your local repository. 
 
-- git pull: Adds changes from the remote repository into your local repository.
+- **git pull:** Adds changes from the remote repository into your local repository.
  
-- git status: Displays a summary of the files that contain changes and are staged for the next commit. 
+- **git status:** Displays a summary of the files that contain changes and are staged for the next commit. 
 
-- git merge: Merges together changes from separate branches.
+- **git merge:** Merges together changes from separate branches.
 
-- git log: Shows the commit history of the repository.
+- **git log:** Shows the commit history of the repository.
 
-- git stash: Allows you to save the current state of your repository which contains your uncommitted changes and return to a clean version before you made those changes. 
+- **git stash:** Allows you to save the current state of your repository which contains your uncommitted changes and return to a clean version before you made those changes. 
 
-- git revert: Creates a new commit which reverses the changes you made in your previous commit. Note: Your current working environment must be clean with no uncommitted changes before running this command. You may have to run git stash before running git revert.
+- **git revert:** Creates a new commit which reverses the changes you made in your previous commit. Note: Your current working environment must be clean with no uncommitted changes before running this command. You may have to run git stash before running git revert.
 
-- git checkout/git switch: Switches your repository to a different branch and updates your local repository with the snapshot of files stored on that branch. 
+- **git checkout/git switch:** Switches your repository to a different branch and updates your local repository with the snapshot of files stored on that branch. 
 
--git branch: Creates a separate version (branch) of a repository. 
+- **git branch:** Creates a separate version (branch) of a repository. 
 
-- git tag: Lets you tag specific points in a repository’s history as being important.
+- **git tag:** Lets you tag specific points in a repository’s history as being important.
 
-# RESOURCES
-
-## FOR MORE INFORMATION ON USING GIT SEE THE FOLLOWING RESOURCES:
+# Resources
 
 [Git Documentation](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
 

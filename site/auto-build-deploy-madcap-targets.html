@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>My User Guides</title>
+    <title>How to Automatically Build and Deploy MadCap Flare Targets - My User Guides</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Home";
-        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_name = "How to Automatically Build and Deploy MadCap Flare Targets";
+        var mkdocs_page_input_path = "auto-build-deploy-madcap-targets.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -35,14 +35,8 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Git</span></p>
@@ -82,7 +76,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Home</li>
+      <li class="breadcrumb-item active">How to Automatically Build and Deploy MadCap Flare Targets</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -91,28 +85,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    git/intro-git-technical-writers.md
-    ...      # Other markdown pages, images and other files.
-</code></pre>
+                <h1 id="how-to-automatically-build-and-deploy-madcap-flare-targets">How to Automatically Build and Deploy MadCap Flare Targets</h1>
+<p>This guide outlines how to automatically build MadCap Flare outputs using the command line. MadCap Flare is a popular tool for managing documentation. You can use the following functionality to automate your documentation deployment process using MadCap Flare and scripting. </p>
+<h2 id="process-overview">Process Overview</h2>
+<ol>
+<li>Create a batch script that builds MadCap Flare outputs using the command line.</li>
+<li>Add a line to the batch script to upload the generated output files to a remote server. </li>
+<li>Create a Windows Task in Task Scheduler that runs the above batch script regularly. </li>
+</ol>
+<h2 id="build-a-madcap-flare-target-with-command-line">Build a MadCap Flare Target with Command Line</h2>
+<p>MadCap Flare targets allow you to define the format for a project’s output. For example, you can define separate targets to output your project into PDF and Word. </p>
+<p>To build a MadCap target using the command line do the following:
+1. Open a command prompt. 
+2. Navigate to the directory where Flare is installed.
+    - The default install location for MadCap Flare is: C:\Program Files\MadCap Software\MadCap Flare [version number]\Flare.app
+3. Enter a command in the following format: madbuild -project [your project path] -target [your target name]
+    - For example <strong>madbuild -project c:\myFolder\myProject.flprj -target HTML5</strong>
+    - <strong>Note:</strong> If a folder name contains a space, the whole project path must be enclosed in quotation marks. For example: <strong>“c:\my Folder\myProject.flprj”</strong>
+    - <strong>Note:</strong> You can use any scripting language to run the madbuild command. </p>
+<p>Add the following commands to a script to complete the above steps: 
+- <strong>cd [Your MadCap Flare Installation Directory]</strong>
+- <strong>madbuild -project [Your Project Path] -target [Your Target Name]</strong></p>
+<p>The above script will automatically change to your MadCap Flare directory and build the designated targets each time it runs.  </p>
+<h2 id="use-curl-to-upload-a-file-to-a-remote-server">Use Curl to Upload a File to a Remote Server</h2>
+<p>Whether you’re using Windows or Linux, you can use Curl to upload the generated MadCap Flare output files to a remote server for deployment. After installing Curl, you can use the following command to upload a file to a remote server: </p>
+<p><strong>curl -T madCapOutputFile -u user:password ftp://ftp.example.com/</strong></p>
+<p>Add the above line of code to your script file below the lines of code that builds your MadCap Flare output. </p>
+<p>See the following page for more information on using Curl: <a href="https://curl.se/docs/tutorial.html">Curl Tutorial</a>.</p>
+<h2 id="sample-batch-script">Sample Batch Script</h2>
+<p>Below is a sample batch script that builds the output of two targets from separate MadCap Flare projects and uploads them to a remote server:</p>
+<p>Creating a Job in Windows Task Scheduler
+To run the above batch script on a set interval: 
+1. In Windows Task Scheduler, select <strong>Create a Basic Task</strong>. 
+2. Determine the interval you want to the task to run. 
+3. On the Action page select Start a Program.
+4. Browse to the location of your batch script and complete the wizard. </p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="git/intro-git-technical-writers.html" class="btn btn-neutral float-right" title="Intro to Git for Technical Writers">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -135,8 +145,6 @@ docs/
     
     
     
-      <span><a href="git/intro-git-technical-writers.html" style="color: #fcfcfc">Next &raquo;</a></span>
-    
   </span>
 </div>
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -151,8 +159,3 @@ docs/
 
 </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2025-09-20 19:51:17.434870+00:00
--->
