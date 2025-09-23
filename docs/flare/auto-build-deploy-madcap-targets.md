@@ -41,6 +41,7 @@ Below is a sample batch script that builds the output of two targets from separa
 
 Creating a Job in Windows Task Scheduler
 To run the above batch script on a set interval: 
+
 1. In Windows Task Scheduler, select **Create a Basic Task**. 
 2. Determine the interval you want to the task to run. 
 3. On the Action page select Start a Program.

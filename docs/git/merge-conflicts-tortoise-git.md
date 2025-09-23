@@ -15,6 +15,7 @@ The following window displays all the files that have an existing conflict.
 Double-click a file in the list to bring up the following screen which allows you to resolve the merge conflicts. 
 
 The above window shows three versions of the conflicted file:
+
 1. **HEAD** is the file as it appears in your current branch.
 2. **MERGE_HEAD** is version of the file from the other branch. 
 3. **Merged** is a version of the file that contains changes from both branches. 
