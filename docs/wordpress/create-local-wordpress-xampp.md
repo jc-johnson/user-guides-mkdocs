@@ -9,6 +9,10 @@ XAMPP is a useful tool for setting up a testing or development instance of WordP
 3. Extract the WordPress zip folder that downloads onto your machine. 
 4. Copy the **wordpress** folder located inside the extracted folder to **[YOUR_XAMPP_INSTALL_DIRECTORY]/htdocs** 
 
+![WordPress Folder](../img/wordpress/wordpress-xampp/Step1.png)
+
+![htdocs Folder](../img/wordpress/wordpress-xampp/Step2.png)
+
 **NOTE:** You can change the website folder name from **wordpress** to easily identify it (e.g. **mysite**).
 
 ## Start the Required WordPress Services
@@ -16,6 +20,8 @@ XAMPP is a useful tool for setting up a testing or development instance of WordP
 2. Start the Apache service by clicking Start in the Actions column in the XAMPP Control Panel.
 3. Start the MYSQL service the same way.
 4. Open PHPMyAdmin by clicking Admin in the Actions column for MySQL.
+
+![XAMPP Control Panel](../img/wordpress/wordpress-xampp/Step3.png)
 
 ## Create a Database and User for WordPress in PHPMyAdmin
 To set up the database that WordPress will use for your website you’ll need to create a database and database users.
@@ -30,6 +36,8 @@ To set up the database that WordPress will use for your website you’ll need to
 8. Click **Go**.
 
 Repeat steps 5-8 for as many database users you wish to create.
+
+![PHPMyAdmin Dashboard](../img/wordpress/wordpress-xampp/Step4.png)
 
 ## Import a Backup Database (Optional)
 
@@ -57,6 +65,8 @@ You’ll need to update the wp-config.php configuration file so WordPress can co
         - Enter the password of the user you created in phpMyAdmin.  
 4. Save your changes. 
 
+![Important Database Settings](../img/wordpress/wordpress-xampp/Step5.png)
+
 ## Run the Wordpress Installer
 Once the required previous steps have been completed you can run the WordPress installation wizard to install it on your machine.
 
@@ -66,6 +76,8 @@ Once the required previous steps have been completed you can run the WordPress i
 3. Complete the WordPress installer.
 4. Log into WordPress using the credentials you defined when running the installer.
 5. You will see the WordPress dashboard.
+
+![WordPress Dashboard](../img/wordpress/wordpress-xampp/Step6.png)
 
 ## Resolving Common Errors
 The below section describes common errors users encounter when setting up WordPress using XAMPP. 
