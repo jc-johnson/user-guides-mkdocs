@@ -91,6 +91,66 @@ In the directory you created for your WordPress instance create a file called
 
 **Note:** Update the version variable to the latest WordPress version.
 
+Here's a version of the docker-compose file that allows phpmyadmin and wordpress to be on the same network:
+
+    version: '3.9'
+
+    services:
+    db:
+        image: mariadb:10.6
+        container_name: mariadb
+        restart: always
+        environment:
+        MYSQL_ROOT_PASSWORD: rootpassword
+        MYSQL_DATABASE: wordpress
+        MYSQL_USER: wordpress
+        MYSQL_PASSWORD: wordpresspassword
+        volumes:
+        - db_data:/var/lib/mysql
+        networks:
+        - wpnet
+
+    wordpress:
+        image: wordpress:latest
+        container_name: wordpress
+        restart: always
+        ports:
+        - "8080:80"
+        environment:
+        WORDPRESS_DB_HOST: db:3306
+        WORDPRESS_DB_USER: wordpress
+        WORDPRESS_DB_PASSWORD: wordpresspassword
+        WORDPRESS_DB_NAME: wordpress
+        volumes:
+        - wordpress_data:/var/www/html
+        depends_on:
+        - db
+        networks:
+        - wpnet
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        container_name: phpmyadmin
+        restart: always
+        ports:
+        - "8081:80"
+        environment:
+        PMA_HOST: db
+        PMA_USER: root
+        PMA_PASSWORD: rootpassword
+        depends_on:
+        - db
+        networks:
+        - wpnet
+
+    volumes:
+    db_data:
+    wordpress_data:
+
+    networks:
+    wpnet:
+        driver: bridge
+
 To start Docker using your docker compose file, open a terminal from within your docker directory and run the following command: 
 
     docker-compose up -d

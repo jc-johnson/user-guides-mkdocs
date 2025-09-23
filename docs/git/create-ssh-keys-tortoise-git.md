@@ -40,6 +40,10 @@ Using an SSH key pair is a secure way of authenticating and accessing source cod
 
 **Important:** Always keep your private key secure.
 
+![PuTTy Key Generator Menu](../img/git/ssh-key/Step1.png)
+
+![PuTTy Public Key Generator Menu](../img/git/ssh-key/Step2.png)
+
 ## Adding Public SSH Keys to Gitlab
 
 1. In File Explorer, navigate to the folder where you stored your SSH keys after generating them. The default location is **C:\User\[YOUR USER]\.ssh**.

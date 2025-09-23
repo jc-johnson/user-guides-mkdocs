@@ -5,7 +5,9 @@
 Notes are a great way of highlighting important information in MadCap Flare. Some notes require long blocks of text that are better broken up yet still contained within the same note block. 
 
 ## Process
+
 To create spacing within a note in MadCap Flare follow the following steps:
+
 1. Create a custom div style for notes.
 2. Create separate divs nested inside of the note div to separate content. 
 

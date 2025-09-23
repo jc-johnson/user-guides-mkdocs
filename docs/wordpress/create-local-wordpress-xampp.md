@@ -70,16 +70,18 @@ Once the required previous steps have been completed you can run the WordPress i
 ## Resolving Common Errors
 The below section describes common errors users encounter when setting up WordPress using XAMPP. 
 
+### Database Connection Error
+
 **Error Message:** Error establishing a database connection.
 
-**Context:** Error occurs when navigating to localhost/[WEBSITE FOLDER] in a browser.
+**Context:** Error occurs when navigating to **localhost/[WEBSITE FOLDER]** in a browser.
 
-**Solution:** Ensure you created a user in phpMyAdmin with full permissions. Ensure that in xampp\htdocs\wordpress\wp-config.php the values for DB_USER and DB_PASSWORD match the user name and password defined for this database user in PHPMyAdmin. 
+**Solution:** Ensure you created a user in phpMyAdmin with full permissions. Ensure that in **xampp\htdocs\wordpress\wp-config.php** the values for DB_USER and DB_PASSWORD match the user name and password defined for this database user in PHPMyAdmin. 
 
-=
+### Aria Recovery Failure
 
 **Error Message:** [ERROR] mysqld.exe: Aria recovery failed. Please run aria_chk -r on all Aria tables and delete all aria_log.######## files.
 
 **Context:** Error appears in XAMMP console log when the MySQL Service fails to start.
 
-**Solution:** Navigate to C:\xampp\mysql\data and delete all files with the format: aria_log.#######.
+**Solution:** Navigate to C:\xampp\mysql\data and delete all files with the format: **aria_log.#######**.
