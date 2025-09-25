@@ -10,6 +10,7 @@ simple interface for complex operations such as merging branches.
 There are two primary ways of merging branches in TortoiseGit:
 
 ### Method 1 - Merge another branch into the current branch
+
 1. In File Explorer navigate to your Git repo location and right-click on the repository directory. 
 2. Ensure you have checked out the branch that you want to merge changes into.   
 3. In the context menu navigate to **TortoiseGit > Merge**.
@@ -17,6 +18,7 @@ There are two primary ways of merging branches in TortoiseGit:
 5. Click **OK**.
 
 ### Method 2 - Merge when Switching Branches
+
 In TortiseGit you can choose which branch you want to merge when switching branches.
 
 1. In File Explorer, right-click on the repository directory. 

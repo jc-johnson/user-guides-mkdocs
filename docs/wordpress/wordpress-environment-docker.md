@@ -5,6 +5,7 @@
 Using Docker Compose is a fast and efficient way to set up a WordPress environment with all the required software. 
 
 ## Important Terms
+
 The following are important terms to understand when using Docker Compose: 
 
 **Container** – an executable package that includes everything needed to run a piece of software. 
@@ -13,12 +14,14 @@ The following are important terms to understand when using Docker Compose:
 **Volume** – a dedicated folder on the host machine that stores data about the Docker environment. A volume lets you share data across multiple containers.
 
 ## Docker Installation
+
 To install docker on your machine: 
 
 1. Install the [Docker desktop client](https://www.docker.com/) for your platform (i.e. Windows, Mac, Linux). 
 2.  Create a folder on your machine that will hold your Docker WordPress environment (for example, docker-local-wordpress).
 
 ## Create an Environment File
+
 Your WordPress environment requires credentials that should not be committed to source control for security reasons. It’s a best practice to define the needed credentials in a separate .env file that your Docker Compose file can reference. 
 
 In your docker project directory create a .env file with the following variables that will be used for your WordPress instance:

@@ -59,6 +59,7 @@ Using an SSH key pair is a secure way of authenticating and accessing source cod
 10. Click **Add Key**.
 
 ## Test Your SSH Key Connection
+
 1. Register your SSH key with your Version Control provider. 
 2. Open a terminal and run **ssh -T git@gitlab.[YOUR GITLAB URL].com**. 
     - If this your first time connecting to the GitLab host, verify the authenticity of the host.
@@ -66,6 +67,7 @@ Using an SSH key pair is a secure way of authenticating and accessing source cod
 If the welcome message doesn’t appear, you can troubleshoot by running SSH in verbose mode using ssh -Tvvv git@gitlab.[YOUR GITLAB URL].com. 
 
 ## Set Default SSH Key in PuTTY 
+
 1. In PuTTY navigate to **Connection > SSH > Auth > Credentials**.
     - The default location of the TortiseGit instance of PuTTY is **C:\Program Files\TortoiseGit\bin**.
 2. Select the private key file that you generated using the TortoiseGit PuTTY Key Generator.
@@ -75,6 +77,7 @@ Now PuTTY will use the correct private key for all new connections.
 **Important:** When cloning a repository using TortoiseGit ensure the load putty key option is selected and is referencing the correct key file.
 
 ## Resources 
+
 - [SSH.com](https://www.ssh.com/academy/ssh/keygen)
 - [Gitlab SSH Documentation](https://docs.gitlab.com/ee/user/ssh.html)
 - [TortiseGit SSH Documentation](https://tortoisegit.org/docs/tortoisegit/tgit-ssh-faq.html#tgit-ssh-faq-defaultkey)

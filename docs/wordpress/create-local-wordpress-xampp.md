@@ -16,6 +16,7 @@ XAMPP is a useful tool for setting up a testing or development instance of WordP
 **NOTE:** You can change the website folder name from **wordpress** to easily identify it (e.g. **mysite**).
 
 ## Start the Required WordPress Services
+
 1. Open XAMPP.
 2. Start the Apache service by clicking Start in the Actions column in the XAMPP Control Panel.
 3. Start the MYSQL service the same way.
@@ -24,6 +25,7 @@ XAMPP is a useful tool for setting up a testing or development instance of WordP
 ![XAMPP Control Panel](../img/wordpress/wordpress-xampp/Step3.png)
 
 ## Create a Database and User for WordPress in PHPMyAdmin
+
 To set up the database that WordPress will use for your website you’ll need to create a database and database users.
 
 1. In PHPMyAdmin click **Databases**. 
@@ -52,6 +54,7 @@ To import an existing database to use for your WordPress site complete the follo
 7. Click the **Go** button at the bottom of the screen to import the database.  
 
 ## Update wp-config.php
+
 You’ll need to update the wp-config.php configuration file so WordPress can connect to the database you created. Complete the following steps:
 
 1. Navigate to **C:\xampp\htdocs\[YOUR_WORDPRESS_FOLDER]** make a copy of **wp-config-sample.php** and rename it to **wp-config.php**.
@@ -68,6 +71,7 @@ You’ll need to update the wp-config.php configuration file so WordPress can co
 ![Important Database Settings](../img/wordpress/wordpress-xampp/Step5.png)
 
 ## Run the Wordpress Installer
+
 Once the required previous steps have been completed you can run the WordPress installation wizard to install it on your machine.
 
 1. Ensure the Apache and MySQL services are running using XAMPP.
@@ -80,6 +84,7 @@ Once the required previous steps have been completed you can run the WordPress i
 ![WordPress Dashboard](../img/wordpress/wordpress-xampp/Step6.png)
 
 ## Resolving Common Errors
+
 The below section describes common errors users encounter when setting up WordPress using XAMPP. 
 
 ### Database Connection Error

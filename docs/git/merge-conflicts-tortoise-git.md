@@ -1,9 +1,11 @@
 # How to Resolve Merge Conflicts in TortoiseGit
 
 ## Introduction
+
 Resolving merge conflicts is an inevitable part of using Git and can be tricky for new users. TortoiseGit offers a helpful interface for resolving conflicts. 
 
 ## Resolving a Merge Conflict
+
 Merge conflicts occur when you merge two branches that have different versions of the same file. If you have conflicting changes when you merge branches in TortoiseGit you will see the following two screens:
 
 ![Tortoise Git Merging Warning Screen](../img/git/resolve-merge-conflicts/Step1.png)
