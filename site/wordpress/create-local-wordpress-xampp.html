@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jordansmkdocssite.netlify.app/wordpress/create-local-wordpress-xampp.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>How to Create a Local Wordpress Environment with XAMPP (Windows) - My User Guides</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to Create a Local Wordpress Environment with XAMPP (Windows)";
+        var mkdocs_page_input_path = "wordpress\\create-local-wordpress-xampp.md";
+        var mkdocs_page_url = "/wordpress/create-local-wordpress-xampp.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My User Guides</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">How to Create a Local Wordpress Environment with XAMPP (Windows)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-create-a-local-wordpress-environment-with-xampp-windows">How to Create a Local Wordpress Environment with XAMPP (Windows)</h1>
+<p>XAMPP is a useful tool for setting up a testing or development instance of WordPress on a server. </p>
+<h2 id="initial-setup">Initial Setup</h2>
+<ol>
+<li>Download and install <a href="https://www.apachefriends.org/download.html">XAMPP</a></li>
+<li>Download the latest version of <a href="https://wordpress.org/download/">WordPress</a></li>
+<li>Extract the WordPress zip folder that downloads onto your machine. </li>
+<li>Copy the <strong>wordpress</strong> folder located inside the extracted folder to <strong>[YOUR_XAMPP_INSTALL_DIRECTORY]/htdocs</strong> </li>
+</ol>
+<p><img alt="WordPress Folder" src="../img/wordpress/wordpress-xampp/Step1.png" /></p>
+<p><img alt="htdocs Folder" src="../img/wordpress/wordpress-xampp/Step2.png" /></p>
+<p><strong>NOTE:</strong> You can change the website folder name from <strong>wordpress</strong> to easily identify it (e.g. <strong>mysite</strong>).</p>
+<h2 id="start-the-required-wordpress-services">Start the Required WordPress Services</h2>
+<ol>
+<li>Open XAMPP.</li>
+<li>Start the Apache service by clicking Start in the Actions column in the XAMPP Control Panel.</li>
+<li>Start the MYSQL service the same way.</li>
+<li>Open PHPMyAdmin by clicking Admin in the Actions column for MySQL.</li>
+</ol>
+<p><img alt="XAMPP Control Panel" src="../img/wordpress/wordpress-xampp/Step3.png" /></p>
+<h2 id="create-a-database-and-user-for-wordpress-in-phpmyadmin">Create a Database and User for WordPress in PHPMyAdmin</h2>
+<p>To set up the database that WordPress will use for your website you’ll need to create a database and database users.</p>
+<ol>
+<li>In PHPMyAdmin click <strong>Databases</strong>. </li>
+<li>Enter a database name that will be used for your WordPress installation and click <strong>Create</strong>.</li>
+<li>In the tree view click the new database you just created.</li>
+<li>Click the <strong>Privileges</strong> tab.</li>
+<li>Click <strong>Add New User Account</strong> to add a new user.</li>
+<li>Enter a username and password.</li>
+<li>Under <strong>Global Privileges</strong> select <strong>Check All</strong>.</li>
+<li>Click <strong>Go</strong>.</li>
+</ol>
+<p>Repeat steps 5-8 for as many database users you wish to create.</p>
+<p><img alt="PHPMyAdmin Dashboard" src="../img/wordpress/wordpress-xampp/Step4.png" /></p>
+<h2 id="import-a-backup-database-optional">Import a Backup Database (Optional)</h2>
+<p>To import an existing database to use for your WordPress site complete the following steps:</p>
+<ol>
+<li>In PhpMyAdmin, on the left-hand side, click <strong>New</strong> to create a new database.</li>
+<li>Enter a database name.</li>
+<li>Select the <strong>Import</strong> tab.</li>
+<li>Under the <strong>File to Import</strong> section, click <strong>Browse</strong> and locate the file with the .sql extension you wish to import.</li>
+<li>Check or uncheck the desired boxes for <strong>Partial Import</strong> and <strong>Other Options</strong>.</li>
+<li>From the <strong>Format</strong> dropdown menu choose <strong>SQL</strong>.</li>
+<li>Click the <strong>Go</strong> button at the bottom of the screen to import the database.  </li>
+</ol>
+<h2 id="update-wp-configphp">Update wp-config.php</h2>
+<p>You’ll need to update the wp-config.php configuration file so WordPress can connect to the database you created. Complete the following steps:</p>
+<ol>
+<li>Navigate to <strong>C:\xampp\htdocs[YOUR_WORDPRESS_FOLDER]</strong> make a copy of <strong>wp-config-sample.php</strong> and rename it to <strong>wp-config.php</strong>.</li>
+<li>Open wp-config.php in a text editor.</li>
+<li>In wp-config.php define the values for the following fields: <ul>
+<li>DB_Name <ul>
+<li>Enter the name of the database you created in PHPMyAdmin. </li>
+</ul>
+</li>
+<li>Username <ul>
+<li>Enter the user name of the user you created in phpMyAdmin. </li>
+</ul>
+</li>
+<li>Password <ul>
+<li>Enter the password of the user you created in phpMyAdmin.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Save your changes. </li>
+</ol>
+<p><img alt="Important Database Settings" src="../img/wordpress/wordpress-xampp/Step5.png" /></p>
+<h2 id="run-the-wordpress-installer">Run the Wordpress Installer</h2>
+<p>Once the required previous steps have been completed you can run the WordPress installation wizard to install it on your machine.</p>
+<ol>
+<li>Ensure the Apache and MySQL services are running using XAMPP.</li>
+<li>In a web browser navigate to <strong>https://localhost/[WORDPRESS INSTALLATION FOLDER]/</strong>.<ul>
+<li>The default URL is <strong>https://localhost/wordpress</strong>.</li>
+</ul>
+</li>
+<li>Complete the WordPress installer.</li>
+<li>Log into WordPress using the credentials you defined when running the installer.</li>
+<li>You will see the WordPress dashboard.</li>
+</ol>
+<p><img alt="WordPress Dashboard" src="../img/wordpress/wordpress-xampp/Step6.png" /></p>
+<h2 id="resolving-common-errors">Resolving Common Errors</h2>
+<p>The below section describes common errors users encounter when setting up WordPress using XAMPP. </p>
+<h3 id="database-connection-error">Database Connection Error</h3>
+<p><strong>Error Message:</strong> Error establishing a database connection.</p>
+<p><strong>Context:</strong> Error occurs when navigating to <strong>localhost/[WEBSITE FOLDER]</strong> in a browser.</p>
+<p><strong>Solution:</strong> Ensure you created a user in phpMyAdmin with full permissions. Ensure that in <strong>xampp\htdocs\wordpress\wp-config.php</strong> the values for DB_USER and DB_PASSWORD match the user name and password defined for this database user in PHPMyAdmin. </p>
+<h3 id="aria-recovery-failure">Aria Recovery Failure</h3>
+<p><strong>Error Message:</strong> [ERROR] mysqld.exe: Aria recovery failed. Please run aria_chk -r on all Aria tables and delete all aria_log.######## files.</p>
+<p><strong>Context:</strong> Error appears in XAMMP console log when the MySQL Service fails to start.</p>
+<p><strong>Solution:</strong> Navigate to C:\xampp\mysql\data and delete all files with the format: <strong>aria_log.#######</strong>.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

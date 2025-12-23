@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jordansmkdocssite.netlify.app/jenkins/auto-run-job-after-git-push.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>How to Automatically Run a Jenkins Build after Pushing Code changes to Git - My User Guides</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to Automatically Run a Jenkins Build after Pushing Code changes to Git";
+        var mkdocs_page_input_path = "jenkins\\auto-run-job-after-git-push.md";
+        var mkdocs_page_url = "/jenkins/auto-run-job-after-git-push.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My User Guides</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">How to Automatically Run a Jenkins Build after Pushing Code changes to Git</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-automatically-run-a-jenkins-build-after-pushing-code-changes-to-git">How to Automatically Run a Jenkins Build after Pushing Code changes to Git</h1>
+<p>Jenkins is an open source tool that lets you automatically build, test and deploy software. It helps you leverage the power of continuous integration and delivery. </p>
+<p>This guide will teach you how to trigger a Jenkins build whenever you push changes to your Git repository.</p>
+<h2 id="install-a-local-instance-of-jenkins-on-windows">Install a Local Instance of Jenkins on Windows</h2>
+<p>Download the Windows Jenkins installer <a href="https://www.jenkins.io/download/#downloading-jenkins">here</a>. </p>
+<p>See <a href="https://www.jenkins.io/doc/book/installing/">this page</a> for more information on installing Jenkins on various environments. </p>
+<h2 id="trigger-a-jenkins-build">Trigger a Jenkins Build</h2>
+<p>There are two ways to automatically trigger a build in Jenkins:
+1. <strong>Push notifications</strong> – The version control system notifies Jenkins of each new commit. 
+    - <strong>Note:</strong> Push notifications are a more efficient method of running automated builds. With push notifications, a build only runs when there is a relevant change. 
+2. <strong>Polling</strong> – Jenkins polls the repository in regular intervals to see if there have been any changes. </p>
+<h2 id="configure-push-notifications">Configure Push Notifications</h2>
+<p>To use push notifications in Jenkins, you need to configure both Jenkins and your version control system (e.g. Github, GitLab) so they can communicate with each other. </p>
+<p><strong>Note:</strong> Each version control system must be configured differently to connect with Jenkins. </p>
+<h2 id="process-overview">Process Overview</h2>
+<p>To configure push notifications in Jenkins follow the following process: 
+1. Install a Jenkins plugin based on your version control system.
+2. Configure your repository server hostname.
+3. Add an access token or credential.
+    - <strong>Note:</strong> Jenkins needs to be able to access the <strong>host</strong> of your Git repository, not just the repository itself. Jenkins can not poll repositories hosted on your local machine by default. Also, Jenkins needs the access token of your version control management system user (e.g. Your Gitlab user). </p>
+<h2 id="main-process">Main Process</h2>
+<ol>
+<li>In Jenkins navigate to <strong>System Configuration &gt; Manage Jenkins</strong>.</li>
+<li>You can allow Jenkins to connect to your repository host depending on your version control management system by doing the following: <ol>
+<li>Under Gitlab Web Hook configuring a Webhook to use with Jenkins. </li>
+<li>Under GitHub adding a GitHub server to use with Jenkins. 
+<strong>Note:</strong> See the <a href="https://www.jenkins.io/doc/">official Jenkins documentation</a> for information on connecting Jenkins with other version control systems. </li>
+</ol>
+</li>
+</ol>
+<h2 id="register-jenkins-webhook-url-with-your-version-control-provider">Register Jenkins Webhook URL with Your Version Control Provider</h2>
+<p>If you choose to use a webhook, you'll need to register it with your version control provider (e.g. GitHub, GitLab). The steps to do this for each system is different and you'll need to check the specific documentation on how to do this.  to use with your version control system. </p>
+<p>Gitlab Instructions - https://docs.gitlab.com/integration/jenkins/
+GitHub Instructions - https://plugins.jenkins.io/github/</p>
+<p>Under URL enter the Jenkins Webhook URL.</p>
+<h2 id="configure-polling">Configure Polling</h2>
+<p>To configure polling to allow Jenkins run builds at a regular interval:
+1. In Jenkins navigate to <strong>Jenkins Job &gt; Configure</strong>. 
+2. In your pipeline under <strong>Scan Multibranch Pipeline Triggers</strong> select <strong>Periodically</strong>.
+3. Select the interval that Jenkins should poll the changes (e.g. every hour).</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

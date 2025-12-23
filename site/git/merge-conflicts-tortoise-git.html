@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jordansmkdocssite.netlify.app/git/merge-conflicts-tortoise-git.html" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>Resolve Merge Conflicts with TortoiseGit - My User Guides</title>
     <link rel="stylesheet" href="../css/theme.css" />
@@ -14,7 +14,7 @@
         // Current page data
         var mkdocs_page_name = "Resolve Merge Conflicts with TortoiseGit";
         var mkdocs_page_input_path = "git\\merge-conflicts-tortoise-git.md";
-        var mkdocs_page_url = null;
+        var mkdocs_page_url = "/git/merge-conflicts-tortoise-git.html";
       </script>
     
     <!--[if lt IE 9]>
@@ -58,18 +58,6 @@
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">MadCap Flare</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../spacing-paragraphs-madcap-flare.html">Add Paragraph Spacing Inside of Note Divs</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">About</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a>
-                  </li>
-              </ul>
       </div>
     </div>
     </nav>
@@ -99,29 +87,36 @@
 <p>Resolving merge conflicts is an inevitable part of using Git and can be tricky for new users. TortoiseGit offers a helpful interface for resolving conflicts. </p>
 <h2 id="resolving-a-merge-conflict">Resolving a Merge Conflict</h2>
 <p>Merge conflicts occur when you merge two branches that have different versions of the same file. If you have conflicting changes when you merge branches in TortoiseGit you will see the following two screens:</p>
+<p><img alt="Tortoise Git Merging Warning Screen" src="../img/git/resolve-merge-conflicts/Step1.png" /></p>
+<p><img alt="Tortoise Git Merge Conflict Notification Screen" src="../img/git/resolve-merge-conflicts/Step2.png" /></p>
 <p>To begin resolving the merge conflict click <strong>Resolve</strong>.</p>
 <p><strong>Note:</strong> You can also click the dropdown arrow and select stash to stash the changes in your current working directory.</p>
 <p>The following window displays all the files that have an existing conflict.</p>
+<p><img alt="Tortoise Git Conflict File List" src="../img/git/resolve-merge-conflicts/Step3.png" /></p>
 <p>Double-click a file in the list to bring up the following screen which allows you to resolve the merge conflicts. </p>
-<p>The above window shows three versions of the conflicted file:
-1. <strong>HEAD</strong> is the file as it appears in your current branch.
-2. <strong>MERGE_HEAD</strong> is version of the file from the other branch. 
-3. <strong>Merged</strong> is a version of the file that contains changes from both branches. </p>
-<p>You can scroll through each of the differences and conflicts using the arrows under Navigate. </p>
+<p><img alt="Tortoise Git Conflict Resolution Screen" src="../img/git/resolve-merge-conflicts/Step4.png" /></p>
+<p>The above window shows three versions of the conflicted file:</p>
+<ol>
+<li><strong>HEAD</strong> is the file as it appears in your current branch.</li>
+<li><strong>MERGE_HEAD</strong> is version of the file from the other branch. </li>
+<li><strong>Merged</strong> is a version of the file that contains changes from both branches.</li>
+</ol>
+<p>You can scroll through each of the differences and conflicts using the arrows under <strong>Navigate</strong>. </p>
+<p><img alt="Tortoise Git Merge Conflict Menu Navigation" src="../img/git/resolve-merge-conflicts/Step5.png" /></p>
 <h2 id="selecting-the-version-you-want-to-keep">Selecting the Version You Want to Keep</h2>
 <p>You have several options for selecting the text block or file you want to keep. The two most common ways are: 
 Right-click on a version of the file. In the context menu, select which text block, whole file, or order of text blocks to use.</p>
+<p><img alt="Tortoise Git Merge Content Block Selection" src="../img/git/resolve-merge-conflicts/Step6.png" /></p>
 <p>Select one of the options under Blocks to choose which text block to use. </p>
 <p>Once you have selected the file or text block you want to use, click Mark as Resolved then click Save. Close the merge window. </p>
-<p>Once you have resolved all files that contained merge conflicts, the file list in this window will be empty:
-Close this window. </p>
-<p>Commit and push the changes from resolving the merge conflicts to add them to your repository.</p>
+<p>Once you have resolved all files that contained merge conflicts, the file list in this window will be empty:</p>
+<p><img alt="Tortoise Git Empty Merge Conflict File List" src="../img/git/resolve-merge-conflicts/Step7.png" /></p>
+<p>Close this window then commit and push the changes from resolving the merge conflicts.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="create-ssh-keys-tortoise-git.html" class="btn btn-neutral float-left" title="Generate and Use SSH Keys with TortoiseGit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../spacing-paragraphs-madcap-flare.html" class="btn btn-neutral float-right" title="Add Paragraph Spacing Inside of Note Divs">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -146,8 +141,6 @@ Close this window. </p>
     
       <span><a href="create-ssh-keys-tortoise-git.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../spacing-paragraphs-madcap-flare.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

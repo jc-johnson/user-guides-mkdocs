@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jordansmkdocssite.netlify.app/flare/spacing-paragraphs-madcap-flare.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>How to Add Paragraph Spacing Inside of Notes in Madcap Flare - My User Guides</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to Add Paragraph Spacing Inside of Notes in Madcap Flare";
+        var mkdocs_page_input_path = "flare\\spacing-paragraphs-madcap-flare.md";
+        var mkdocs_page_url = "/flare/spacing-paragraphs-madcap-flare.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My User Guides</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">How to Add Paragraph Spacing Inside of Notes in Madcap Flare</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-add-paragraph-spacing-inside-of-notes-in-madcap-flare">How to Add Paragraph Spacing Inside of Notes in Madcap Flare</h1>
+<h2 id="context">Context</h2>
+<p>Notes are a great way of highlighting important information in MadCap Flare. Some notes require long blocks of text that are better broken up yet still contained within the same note block. </p>
+<h2 id="process">Process</h2>
+<p>To create spacing within a note in MadCap Flare follow the following steps:</p>
+<ol>
+<li>Create a custom div style for notes.</li>
+<li>Create separate divs nested inside of the note div to separate content. </li>
+</ol>
+<p>The best way to create spacing between paragraphs within the same note in MadCap flare is to create separate divs of content nested inside the parent note div. You can do this easily using the XML editor in MadCap Flare.</p>
+<p>Between each separate block of text also add a div that simply adds a space between paragraphs of text. </p>
+<h2 id="creating-a-note-div-style">Creating a Note DIV Style</h2>
+<p>To create styling for content that should be inside of a note, you have to create a custom class in your stylesheet in your MadCap Flare project. Complete the following steps: </p>
+<ol>
+<li>In MadCap Flare in the Content Explorer, navigate to <strong>Resources &gt; Stylesheets &gt; [Your Project Stylesheet].css</strong></li>
+<li>Right click the CSS file and select <strong>Open with &gt; Internal Text Editor</strong>  </li>
+<li>Add a definition for the CSS properties for <strong>div.note</strong> content similar to the example below. </li>
+<li>Save the changes you made to the stylesheet. </li>
+<li>In a project topic, select the content you want to put inside of a note and select the newly created <strong>div.note</strong> style from the style dropdown in the <strong>Styles</strong> window on the <strong>Home</strong> tab. </li>
+</ol>
+<h3 id="css-properties-example">CSS Properties Example</h3>
+<pre><code>    div.note
+    {
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        background-color: #f0f7fb;
+        border: solid 1px #3498db;
+        border-radius: 6px;
+        line-height: 18px;
+        mc-auto-number-format: '{b}Note: {/b}';
+        overflow: hidden;
+        padding-bottom: 1em;
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-right: 1em;
+    }
+</code></pre>
+<h3 id="basic-note-example">Basic Note Example</h3>
+<p><img alt="Note Example" src="../img/wordpress/wordpress-note/NoteExample1.png" /></p>
+<h2 id="separating-content-within-a-note">Separating Content Within a Note</h2>
+<ol>
+<li>Right-click on your topic in the MadCap Flare File Explorer.</li>
+<li>Edit your topic using the Text Editor. </li>
+<li>Insert a code snippet similar to the code sample below. </li>
+</ol>
+<p><strong>Note:</strong> Use the following line to create spacing between paragraphs within the note div: </p>
+<pre><code>&lt;div&gt;&amp;#160;&lt;/div&gt;
+</code></pre>
+<h2 id="code-sample-of-div-with-spacing">Code Sample of Div with Spacing</h2>
+<pre><code>&lt;div class="note" MadCap:autonum="NOTE: "&gt;
+    &lt;div&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere libero nulla, sed venenatis nibh eleifend quis. Vestibulum sit amet mauris quis lectus scelerisque accumsan vitae vitae odio. Etiam a consectetur sem. Ut vel velit convallis, rhoncus lectus nec, euismod arcu. Morbi vitae elit at urna aliquam hendrerit.  Praesent nec vulputate nisi, id venenatis felis. Curabitur lorem tellus, condimentum in auctor dignissim, interdum vel neque. Praesent tempus libero nisl, et molestie ante imperdiet ut. Quisque eget neque eget arcu pretium gravida.&lt;/div&gt;
+    &lt;div&gt;&amp;#160;&lt;/div&gt; 
+    &lt;div&gt;Quisque convallis nisl eget vulputate condimentum. Donec lacinia semper feugiat. Proin condimentum velit neque, eu ultrices massa porta sit amet. Vestibulum vitae nibh dignissim, maximus ipsum et, volutpat nunc. Sed id urna in nulla tristique elementum. Mauris tristique mattis turpis non gravida. Duis ac condimentum mi. Sed tellus metus, ultrices ac lectus vitae, dapibus rutrum diam. Nullam quam mi, tincidunt eget nulla vitae, convallis maximus massa. Sed et tincidunt augue. Duis mi ante, ultricies vel tortor ac, feugiat placerat lacus.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="result">Result</h2>
+<p>The note from the above code will appear as follows in MadCap Flare:</p>
+<p><img alt="Example Note with Spacing" src="../img/wordpress/wordpress-note/NoteExample2.png" /></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

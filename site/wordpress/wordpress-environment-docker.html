@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jordansmkdocssite.netlify.app/wordpress/wordpress-environment-docker.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>How to Create a WordPress Environment Using Docker Compose - My User Guides</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to Create a WordPress Environment Using Docker Compose";
+        var mkdocs_page_input_path = "wordpress\\wordpress-environment-docker.md";
+        var mkdocs_page_url = "/wordpress/wordpress-environment-docker.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> My User Guides
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My User Guides</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">How to Create a WordPress Environment Using Docker Compose</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-create-a-wordpress-environment-using-docker-compose">How to Create a WordPress Environment Using Docker Compose</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Using Docker Compose is a fast and efficient way to set up a WordPress environment with all the required software. </p>
+<h2 id="important-terms">Important Terms</h2>
+<p>The following are important terms to understand when using Docker Compose: </p>
+<p><strong>Container</strong> – an executable package that includes everything needed to run a piece of software. 
+<strong>Dockerfile</strong> – a text file that defines all components that will be installed in a Docker environment.
+<strong>Image</strong> – a template that contains instructions on how to build a Docker container.<br />
+<strong>Volume</strong> – a dedicated folder on the host machine that stores data about the Docker environment. A volume lets you share data across multiple containers.</p>
+<h2 id="docker-installation">Docker Installation</h2>
+<p>To install docker on your machine: </p>
+<ol>
+<li>Install the <a href="https://www.docker.com/">Docker desktop client</a> for your platform (i.e. Windows, Mac, Linux). </li>
+<li>Create a folder on your machine that will hold your Docker WordPress environment (for example, docker-local-wordpress).</li>
+</ol>
+<h2 id="create-an-environment-file">Create an Environment File</h2>
+<p>Your WordPress environment requires credentials that should not be committed to source control for security reasons. It’s a best practice to define the needed credentials in a separate .env file that your Docker Compose file can reference. </p>
+<p>In your docker project directory create a .env file with the following variables that will be used for your WordPress instance:</p>
+<pre><code>WORDPRESS_DB_HOST=mariadb:3306
+WORDPRESS_DB_NAME=wordpress
+WORDPRESS_DB_USER=user
+WORDPRESS_DB_PASSWORD=userpassword
+
+MYSQL_ROOT_PASSWORD=rootpassword
+MYSQL_DATABASE=wordpress
+MYSQL_USER=mysqluser
+MYSQL_PASSWORD=mysqlpassword
+
+PHPMYADMIN_USER=phpmyadminuser
+PHPMYADMIN_PASSWORD=phpmyadminpassword
+</code></pre>
+<h2 id="create-a-docker-compose-file">Create a Docker Compose File</h2>
+<p>In the directory you created for your WordPress instance create a file called 
+<strong>docker-compose</strong> (no file extension) and enter the following content:</p>
+<pre><code>version: '3.9'
+
+services:
+db:
+    image: mariadb:10.6
+    container_name: mariadb
+    restart: always
+    environment:
+    MYSQL_ROOT_PASSWORD: rootpassword
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: wordpresspassword
+    volumes:
+    - db_data:/var/lib/mysql
+
+wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    ports:
+    - "8080:80"
+    environment:
+    WORDPRESS_DB_HOST: db:3306
+    WORDPRESS_DB_USER: wordpress
+    WORDPRESS_DB_PASSWORD: wordpresspassword
+    WORDPRESS_DB_NAME: wordpress
+    volumes:
+    - wordpress_data:/var/www/html
+    depends_on:
+    - db
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    ports:
+    - "8081:80"
+    environment:
+    PMA_HOST: db
+    PMA_USER: root
+    PMA_PASSWORD: rootpassword
+    depends_on:
+    - db
+
+volumes:
+db_data:
+wordpress_data:
+</code></pre>
+<p><strong>Note:</strong> Update the version variable to the latest WordPress version.</p>
+<p>Here's a version of the docker-compose file that allows phpmyadmin and wordpress to be on the same network:</p>
+<pre><code>version: '3.9'
+
+services:
+db:
+    image: mariadb:10.6
+    container_name: mariadb
+    restart: always
+    environment:
+    MYSQL_ROOT_PASSWORD: rootpassword
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: wordpresspassword
+    volumes:
+    - db_data:/var/lib/mysql
+    networks:
+    - wpnet
+
+wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    ports:
+    - "8080:80"
+    environment:
+    WORDPRESS_DB_HOST: db:3306
+    WORDPRESS_DB_USER: wordpress
+    WORDPRESS_DB_PASSWORD: wordpresspassword
+    WORDPRESS_DB_NAME: wordpress
+    volumes:
+    - wordpress_data:/var/www/html
+    depends_on:
+    - db
+    networks:
+    - wpnet
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    ports:
+    - "8081:80"
+    environment:
+    PMA_HOST: db
+    PMA_USER: root
+    PMA_PASSWORD: rootpassword
+    depends_on:
+    - db
+    networks:
+    - wpnet
+
+volumes:
+db_data:
+wordpress_data:
+
+networks:
+wpnet:
+    driver: bridge
+</code></pre>
+<p>To start Docker using your docker compose file, open a terminal from within your docker directory and run the following command: </p>
+<pre><code>docker-compose up -d
+</code></pre>
+<h2 id="navigating-to-wordpress-and-phpmyadmin">Navigating to WordPress and PhpMyAdmin</h2>
+<p>Once your container is up and running, in Docker Desktop under Containers click the links under Ports column in your container to open the PhpMyAdmin console and WordPress console respectively.</p>
+<p>After opening the WordPress console for the first time complete the WordPress installation wizard.</p>
+<p>To stop the Docker container, open a terminal from within your Docker directory and run the following command:</p>
+<pre><code>docker compose down
+</code></pre>
+<p><strong>Note:</strong> After initially starting your container using the command line, containers can be stopped and started using the Docker Desktop UI.  </p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

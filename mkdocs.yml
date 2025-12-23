@@ -10,16 +10,7 @@ nav:
     - Merge Branches with Tortoise Git: git/merge-branches-tortoise-git.md
     - Generate and Use SSH Keys with TortoiseGit: git/create-ssh-keys-tortoise-git.md
     - Resolve Merge Conflicts with TortoiseGit: git/merge-conflicts-tortoise-git.md
-  - MadCap Flare:
-    - Add Paragraph Spacing Inside of Note Divs: flare/spacing-paragraphs-madcap-flare.md
-    - Automatically Run Jenkins Jobs After a Git Push: flare/auto-build-deploy-madcap-targets.md
-  - WordPress:
-    - Create a WordPress Environment in Docker: wordpress/wordpress-environment-docker.md
-    - Create a Local WordPress Environment Using XAMPP: wordpress/create-local-wordpress-xampp.md
-  - About:
-    - License: license.md
-    - Release Notes: release-notes.md
 theme: readthedocs
-site_url: ""
+site_url: "https://jordansmkdocssite.netlify.app"
 use_directory_urls: false
 plugins: []

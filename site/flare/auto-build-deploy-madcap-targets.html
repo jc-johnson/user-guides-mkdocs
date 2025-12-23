@@ -3,22 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jordansmkdocssite.netlify.app/flare/auto-build-deploy-madcap-targets.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>How to Automatically Build and Deploy MadCap Flare Targets - My User Guides</title>
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
         var mkdocs_page_name = "How to Automatically Build and Deploy MadCap Flare Targets";
-        var mkdocs_page_input_path = "auto-build-deploy-madcap-targets.md";
-        var mkdocs_page_url = null;
+        var mkdocs_page_input_path = "flare\\auto-build-deploy-madcap-targets.md";
+        var mkdocs_page_url = "/flare/auto-build-deploy-madcap-targets.html";
       </script>
     
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
+      <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
       <script>hljs.highlightAll();</script> 
@@ -30,36 +30,24 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="index.html" class="icon icon-home"> My User Guides
+          <a href="../index.html" class="icon icon-home"> My User Guides
         </a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Git</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="git/intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/intro-git-technical-writers.html">Intro to Git for Technical Writers</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="git/merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-branches-tortoise-git.html">Merge Branches with Tortoise Git</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="git/create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/create-ssh-keys-tortoise-git.html">Generate and Use SSH Keys with TortoiseGit</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="git/merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">MadCap Flare</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="spacing-paragraphs-madcap-flare.html">Add Paragraph Spacing Inside of Note Divs</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">About</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../git/merge-conflicts-tortoise-git.html">Resolve Merge Conflicts with TortoiseGit</a>
                   </li>
               </ul>
       </div>
@@ -69,13 +57,13 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">My User Guides</a>
+          <a href="../index.html">My User Guides</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">How to Automatically Build and Deploy MadCap Flare Targets</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -95,31 +83,47 @@
 </ol>
 <h2 id="build-a-madcap-flare-target-with-command-line">Build a MadCap Flare Target with Command Line</h2>
 <p>MadCap Flare targets allow you to define the format for a project’s output. For example, you can define separate targets to output your project into PDF and Word. </p>
-<p>To build a MadCap target using the command line do the following:
-1. Open a command prompt. 
-2. Navigate to the directory where Flare is installed.
-    - The default install location for MadCap Flare is: C:\Program Files\MadCap Software\MadCap Flare [version number]\Flare.app
-3. Enter a command in the following format: madbuild -project [your project path] -target [your target name]
-    - For example <strong>madbuild -project c:\myFolder\myProject.flprj -target HTML5</strong>
-    - <strong>Note:</strong> If a folder name contains a space, the whole project path must be enclosed in quotation marks. For example: <strong>“c:\my Folder\myProject.flprj”</strong>
-    - <strong>Note:</strong> You can use any scripting language to run the madbuild command. </p>
-<p>Add the following commands to a script to complete the above steps: 
-- <strong>cd [Your MadCap Flare Installation Directory]</strong>
-- <strong>madbuild -project [Your Project Path] -target [Your Target Name]</strong></p>
+<p>To build a MadCap target using the command line do the following:</p>
+<ol>
+<li>Open a command prompt. </li>
+<li>
+<p>Navigate to the directory where Flare is installed.</p>
+<ul>
+<li>The default install location for MadCap Flare is: <strong>C:\Program Files\MadCap Software\MadCap Flare [version number]\Flare.app</strong></li>
+</ul>
+</li>
+<li>
+<p>Enter a command in the following format: </p>
+<ul>
+<li><strong>madbuild -project [your project path] -target [your target name]</strong></li>
+<li>Example: <strong>madbuild -project c:\myFolder\myProject.flprj -target HTML5</strong><ul>
+<li><strong>Note:</strong> If a folder name contains a space, the whole project path must be enclosed in quotation marks. For example: <strong>“c:\my Folder\myProject.flprj”</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Add the following commands to a script to complete the above steps: </p>
+<pre><code>cd [Your MadCap Flare Installation Directory]
+madbuild -project [Your Project Path] -target [Your Target Name]
+</code></pre>
 <p>The above script will automatically change to your MadCap Flare directory and build the designated targets each time it runs.  </p>
 <h2 id="use-curl-to-upload-a-file-to-a-remote-server">Use Curl to Upload a File to a Remote Server</h2>
 <p>Whether you’re using Windows or Linux, you can use Curl to upload the generated MadCap Flare output files to a remote server for deployment. After installing Curl, you can use the following command to upload a file to a remote server: </p>
-<p><strong>curl -T madCapOutputFile -u user:password ftp://ftp.example.com/</strong></p>
+<pre><code>curl -T madCapOutputFile -u user:password ftp://ftp.example.com/
+</code></pre>
 <p>Add the above line of code to your script file below the lines of code that builds your MadCap Flare output. </p>
 <p>See the following page for more information on using Curl: <a href="https://curl.se/docs/tutorial.html">Curl Tutorial</a>.</p>
 <h2 id="sample-batch-script">Sample Batch Script</h2>
 <p>Below is a sample batch script that builds the output of two targets from separate MadCap Flare projects and uploads them to a remote server:</p>
 <p>Creating a Job in Windows Task Scheduler
-To run the above batch script on a set interval: 
-1. In Windows Task Scheduler, select <strong>Create a Basic Task</strong>. 
-2. Determine the interval you want to the task to run. 
-3. On the Action page select Start a Program.
-4. Browse to the location of your batch script and complete the wizard. </p>
+To run the above batch script on a set interval: </p>
+<ol>
+<li>In Windows Task Scheduler, select <strong>Create a Basic Task</strong>. </li>
+<li>Determine the interval you want to the task to run. </li>
+<li>On the Action page select Start a Program.</li>
+<li>Browse to the location of your batch script and complete the wizard. </li>
+</ol>
               
             </div>
           </div><footer>
@@ -147,10 +151,10 @@ To run the above batch script on a set interval:
     
   </span>
 </div>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = ".";</script>
-    <script src="js/theme_extra.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
